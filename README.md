@@ -1,15 +1,16 @@
 # PROJECT : Microsoft SQL Beginner class
 
-**COURSE OUTLINES**
+### COURSE OUTLINES
 
-- Introduction to SQL 
-- Introduction & Types of SQL Commands
-- Introduction to SQL Queries
-- SQL Tables
-- SQL Clauses
-- SQL operators
-- SQL Views
-- Introduction to Case When statement
+### Introduction to SQL 
+### Introduction & Types of SQL Commands
+### Introduction to SQL Queries
+### SQL Tables
+### SQL Clauses
+### SQL operators
+### SQL Views
+### Introduction to Case When statement
+
 
 ## Day one(08 - 05 - 2025) 
 
@@ -17,7 +18,7 @@
 
 FILE : [DSA-SQL For Data Analysis.pdf](https://github.com/user-attachments/files/20886169/DSA-SQL.For.Data.Analysis.pdf)
 
-Today, we learnt the following
+Today, we learnt the following;
 
  -  What are Databases:  A database is an organized collection of data that 
 is stored and managed in a structured way to allow 
@@ -749,153 +750,103 @@ Finally, we get to the last class. The journey so far has not been easy honsetly
   
 -----CASE WHEN STATEMENTS
 
-Alter Table Employee
+	Alter Table Employee
+	Add [State of Origin] varchar (100)
 
-Add [State of Origin] varchar (100)
-
-Alter Table Employee
-
-Alter column [State of Origin] varchar (255)
+	Alter Table Employee
+	Alter column [State of Origin] varchar (255)
 
 ----Update state of origin---
 
 -----Using where
 
-Update Employee
-
-set [State of Origin] = 'Lagos'
-
-where Staff_Id In ('AB401', 'AB249', 'AB212')
+	Update Employee
+	set [State of Origin] = 'Lagos'
+	where Staff_Id In ('AB401', 'AB249', 'AB212')
 
 -----Using CASE WHEN
 
-Update Employee
+	Update Employee
+	set [State of Origin] = 
+ 	CASE
+    	when Staff_Id = 'AB200' THEN 'Delta'
+   	when Staff_Id = 'AB212' THEN 'Lagos'
+    	when Staff_Id = 'AB223' THEN 'Oyo'
+	when Staff_Id = 'AB234' THEN 'Bauchi'
+	when Staff_Id = 'AB240' THEN 'Port Harcourt'
+	when Staff_Id = 'AB249' THEN 'Lagos'
+ 	when Staff_Id = 'AB254' THEN 'Edo'
+   	when Staff_Id = 'AB260' THEN 'Ekiti'
+   	when Staff_Id = 'AB268' THEN 'Delta'
+   	when Staff_Id = 'AB270' THEN 'Lagos'
+   	when Staff_Id = 'AB278' THEN 'Kano'
+   	when Staff_Id = 'AB281' THEN 'kano'
+   	when Staff_Id = 'AB282' THEN 'Ekiti'
+   	when Staff_Id = 'AB286' THEN 'Lagos'
+   	when Staff_Id = 'AB298' THEN 'Delta'
+   	when Staff_Id = 'AB299' THEN 'Edo'
+   	when Staff_Id = 'AB401' THEN 'Oyo'
+   	when Staff_Id = 'AB405' THEN 'Delta'
 
-set [State of Origin] = 
+	ELSE 'Unknown'
+	END
 
- CASE
+	SELECT * FROM Employee
+	WHERE [State of Origin] = 'Lagos'
 
-   when Staff_Id = 'AB200' THEN 'Delta'
-  
-   when Staff_Id = 'AB212' THEN 'Lagos'
-   
-   when Staff_Id = 'AB223' THEN 'Oyo'
-   
-   when Staff_Id = 'AB234' THEN 'Bauchi'
-   
-   when Staff_Id = 'AB240' THEN 'Port Harcourt'
-   
-   when Staff_Id = 'AB249' THEN 'Lagos'
-   
-   when Staff_Id = 'AB254' THEN 'Edo'
-   
-   when Staff_Id = 'AB260' THEN 'Ekiti'
-   
-   when Staff_Id = 'AB268' THEN 'Delta'
-   
-   when Staff_Id = 'AB270' THEN 'Lagos'
-   
-   when Staff_Id = 'AB278' THEN 'Kano'
-   
-   when Staff_Id = 'AB281' THEN 'kano'
-   
-   when Staff_Id = 'AB282' THEN 'Ekiti'
-   
-   when Staff_Id = 'AB286' THEN 'Lagos'
-   
-   when Staff_Id = 'AB298' THEN 'Delta'
-   
-   when Staff_Id = 'AB299' THEN 'Edo'
-   
-   when Staff_Id = 'AB401' THEN 'Oyo'
-   
-   when Staff_Id = 'AB405' THEN 'Delta'
-
-ELSE 'Unknown'
-
-END
-
-SELECT * FROM Employee
-
-WHERE [State of Origin] = 'Lagos'
-
-SELECT [state of origin], count([state of origin]) as [State numbers] from Employee
-
-Group by [state of origin] 
-
-Order by [State numbers] desc;
+	SELECT [state of origin], count([state of origin]) as [State numbers] from Employee
+	Group by [state of origin] 
+	Order by [State numbers] desc;
 
 ----Get staff age at commencement of Hire---
 
-ALter TABLE EMPLOYEE
+	ALter TABLE EMPLOYEE
+ 	ALter column Hire_date Date
 
-ALter column Hire_date Date
-
-select * from Employee
-
-ALTER TABLE EMPLOYEE
-
-ADD Age AS DATEDIFF(Year, Date_of_Birth, Hire_Date) -
-
-  CASE
-  
+	select * from Employee
+	ALTER TABLE EMPLOYEE
+	ADD Age AS DATEDIFF(Year, Date_of_Birth, Hire_Date) -
+	CASE
       WHEN MONTH(Hire_Date) < MONTH(Date_of_Birth) 
 	  OR (MONTH(Hire_date) = MONTH(Date_of_Birth) 
 	  AND DAY(Hire_date) < DAY(Date_of_Birth))
-
-THEN 1
-  
-   ELSE 0
-
-END
+	THEN 1
+  	ELSE 0
+	END
 
 ----Get staff age today
 
-ALter TABLE EMPLOYEE
+	ALter TABLE EMPLOYEE
+	drop column Age
 
-drop column Age
-
-ALTER TABLE EMPLOYEE
-
-ADD Age AS DATEDIFF(Year, Date_of_Birth, GETDATE()) -
-
-  CASE
-
-      WHEN MONTH(Date_of_Birth) < GETDATE() 
+	ALTER TABLE EMPLOYEE
+	ADD Age AS DATEDIFF(Year, Date_of_Birth, GETDATE()) -
+ 	CASE
+	WHEN MONTH(Date_of_Birth) < GETDATE() 
 	  OR (MONTH(Date_of_Birth) = GETDATE() 
 	  AND DAY(Date_of_Birth) < GETDATE())
+	THEN 1
+ 	ELSE 0
+	END
 
-THEN 1
-
-   ELSE 0
-
-END
-
-select * from Employee
+	select * from Employee
 
 -- 50 and above = Executive Director
 ---36 - 49 = Senior Manager
 --26 and 35 = Manager
 --less than 25 =  Assistant Manager
 
-create view Vw_EMPLOYEES_AGE_GROUP
-
-AS
-
-select Staff_Id, First_Name, Gender, [state of origin], Age,
-
-  CASE
-      
-       when Age  >= 50 then 'Executive Director'
+	create view Vw_EMPLOYEES_AGE_GROUP
+	AS
+	select Staff_Id, First_Name, Gender, [state of origin], Age,
+  	CASE
+  	 when Age  >= 50 then 'Executive Director'
 	   when Age between 36 and 49 then 'Senior Manager'
 	   when Age between 26 and 35 then 'Manager'
 	   when Age <= 25 then 'Executive Trainee'
-	
-  Else 'Unknown'
-
-End as [Age Group]
-
-from Employee
+	 Else 'Unknown'
+	End as [Age Group]
+	from Employee
 
 ------File Back-up and Restore----
 
