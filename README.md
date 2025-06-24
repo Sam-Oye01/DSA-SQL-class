@@ -1,6 +1,6 @@
 # PROJECT : Microsoft SQL Beginner class
 
-### COURSE OUTLINES
+## COURSE OUTLINES
 
 ### Introduction to SQL 
 ### Introduction & Types of SQL Commands
