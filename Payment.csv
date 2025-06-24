@@ -1,0 +1,24 @@
+paymentid,Account_No,staffid,Bank,Payment_Method
+2,2033030303,AB200,Zenith Bank,transfer
+3,2123459910,AB401,Zenith Bank,transfer
+4,2034562240,AB254,Zenith Bank,cash
+5,2234556303,AB212,Zenith Bank,transfer
+6,2033037703,AB249,Zenith Bank,cash
+7,2033030303,AB298,Zenith Bank,cash
+8,2455657503,AB260,Zenith Bank,transfer
+9,2045595953,AB281,Zenith Bank,cash
+10,2033030303,AB273,Zenith Bank,transfer
+11,2077778903,AB299,Zenith Bank,transfer
+12,2033030301,AB286,Zenith Bank,transfer
+13,2123459911,AB260,Zenith Bank,transfer
+14,2034562241,AB270,Zenith Bank,cash
+15,2234556302,AB104,Zenith Bank,transfer
+16,2033037705,AB268,Zenith Bank,cash
+17,2033030306,AB270,Zenith Bank,cash
+18,2455657509,AB300,Zenith Bank,transfer
+19,2198773830,AB299,GT bank,transfer
+20,2024656569,AB405,Access bank,cash
+21,2222444933,AB200,Fidelity bank,transfer
+22,5674842300,AB278,Access bank,transfer
+23,2222444933,AB200,GT bank,transfer
+24,2034537300,AB278,Access bank,transfer

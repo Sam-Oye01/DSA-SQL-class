@@ -1,0 +1,17 @@
+salary_id,Staffid,firstname,lastname,department,salary
+1,AB401,ayan,olakun,Information Tech.,45000.45
+2,AB212,okorie,mercy,Account,500001
+3,AB223,joshua,chukwuemeka,Human Resources,100560.934
+4,AB234,sanni,ibrahim,Sales and Marketing,845688.99
+5,AB254,mercy,olanipekun,Account,8890
+6,AB249,johnson,mercy,Information Tech.,234000.909
+7,AB298,ayomide,halleluyah,Logistics,678000.992
+8,AB260,deborah,justin,Logistics,900099.007
+9,AB281,wale,olanipekun,Information Tech,873093.234
+10,AB200,ayomide,halleluyah,Human Resources,45699.859
+11,AB405,deborah,justin,Account,898349.9
+12,AB282,wale,olanipekun,Sales and Marketing,362636.565
+13,AB278,shukurat,lasisi,Logistics,100000.465
+14,AB240,johnson,mercy,Information Tech,3855590.989
+15,AB299,ayomide,halleluyah,Account,8585858.929
+16,AB268,deborah,justin,Human Resources,76767.939
