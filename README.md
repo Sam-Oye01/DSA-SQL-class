@@ -7,10 +7,9 @@
 ### Introduction to SQL Queries
 ### SQL Tables
 ### SQL Clauses
-### SQL operators
+### SQL Operators
 ### SQL Views
-### Introduction to Case When statement
-
+### Introduction to Case-When statement
 
 ## Day one(08 - 05 - 2025) 
 
