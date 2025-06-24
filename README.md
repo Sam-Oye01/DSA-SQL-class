@@ -32,16 +32,6 @@ for easy access, retrieval, and manipulation.
      - SQL allows you to analyze more complex questions than dashboard tools.
  -  Types of Databases (Microsoft Access, SQL Server, MySQL, PostgreSQL, Oracle, etc).
 
- -  SQL Views
-     - Introduction to SQL Views
-     - SQL – Create views
-     - SQL - update views
-     - SQL – Drops
-     - SQL – Rename views
- - SQL CASE WHEN STATEMENT
-     - Introduction to CASE Statement
-     - SQL – Create CASE WHEN Statement
-
 ## Day Two(12 - 05 -2025)
 
 ### Introduction & Types of SQL Commands
@@ -550,8 +540,367 @@ drop view [vw emplysal table]
 
 ### SQL Views
 
+Today, it was another breathtaking session on SQL as we dived further into creating views and using SET operations.
+
+ -  SQL Views
+     - SQL – Create views
+     - SQL - update views
+     - SQL – Drops
+     - SQL – Rename views
+
+We wrote the following queries;
+
+``` SQL ```
+
+-----IMPORT CSV FILES INTO DSA_db
+
+---DSA Mall Ikeja [Download here](https://github.com/user-attachments/files/20889212/Mall_Ikeja.csv)
+
+
+---DSA Mall Portharcourt [Download here](https://github.com/user-attachments/files/20889224/Mall_Lekki.csv)
+
+
+---DSA Mall Ghana [Download here](https://github.com/user-attachments/files/20889234/Mall_Marina.csv)
+
+
+----SQL SET OPERATIONS
+
+---UNION
+
+---UNION ALL
+
+CREATE TABLE [DSA MALL IKEJA 2] (CustomerID INT not null,
+FirstName varchar (max),
+LastName varchar (max),
+[Customer gender] nvarchar (max),
+[Transaction Date] DATE DEFAULT GETDATE(),
+[Address] varchar (max),
+[Transaction Amount] decimal (18, 4)
+)
+
+select * from [DSA MALL IKEJA 2]
+
+ALter TABLE [DSA MALL IKEJA]
+
+ALter column FirstNamae varchar (max) 
+ 
+insert into [DSA MALL IKEJA 2] (customerID,FirstName, lastName, [Customer gender],[Address], [Transaction amount])
+
+values ( 200,'Femk', 'abdukl',  'male', '9 old road', 88000.00),
+   (201, 'isaiah', 'john','male',  '22 alaly stree, okun', 1590.33),
+    ( 206,'emma', 'abu','male',  '7 ababa street, makunn', 6788.33),
+	 (210, 'kara', 'ogun','female' , '10 hahroh road, ottawa', 3400.33),
+	  ( 211,'sunkanmi', 'osagie', 'female' , '9 agric butstop street, okun', 89875.00),
+	   (209,'oge', 'kunle', 'male', '10 iwo street, liverpool', 7860.33),
+	    (204, 'igbayin', 'elizabeth', 'female', '100 kukuma street, epe', 89100.69)
+     
+-----Union
+
+select * from [DSA Mall Ikeja]
+
+union
+
+select * from [DSA Mall Ghana]
+
+union
+
+select * from [DSA Mall Portharcourt]
+
+order by CustomerID desc;
+
+-----Union all
+
+select * from [DSA Mall Ikeja]
+
+union all
+
+select * from [DSA Mall Ghana]
+
+union all
+
+select * from [DSA Mall Portharcourt]
+
+order by CustomerID desc;
+
+-----create column (Branch)------ 
+
+Create view [vw DSA MALL TRANSACTIONS]
+
+as
+
+SELECT 
+'[DSA Mall Ikeja]' as branch, CustomerID as [Customer ID],
+firstname as [First Name], lastname as [Last Name], customer_gender as Gender, Transactiondate as [Transaction Date],
+[Address], transaction_amount as [Transaction Amount] 
+from [DSA Mall Ikeja]
+
+union
+
+SELECT 
+'[DSA Mall Ghana]' as branch, CustomerID as [Customer ID],
+firstname as [First Name], lastname as [Last Name], customer_gender as Gender, Transactiondate as [Transaction Date],
+[Address], transaction_amount as [Transaction Amount] 
+from [DSA Mall Ghana]
+
+union
+
+SELECT 
+'[DSA Mall Portharcourt]' as branch, CustomerID as [Customer ID],
+firstname as [First Name], lastname as [Last Name], customer_gender as Gender, Transactiondate as [Transaction Date],
+[Address], transaction_amount as [Transaction Amount] 
+from [DSA Mall Portharcourt]
+
+-----TOTAL SALES PER BRANCH
+
+SELECT branch, sum([Transaction Amount]) as  [total sales]
+	from [vw DSA MALL TRANSACTIONS]
+	
+ group by branch
+
+ order by [total sales] desc;
+
+-----TOTAL SALES by gender
+
+SELECT Gender, sum([Transaction Amount]) as  [total sales]
+	from [vw DSA MALL TRANSACTIONS]
+	
+ group by Gender
+
+ order by [total sales] desc;
+
+
+-----DOES CHANGES IN TABLES AFFECT VIEW? Yes.
+
+ALTER TABLE [DSA MALL IKEJA]
+
+ALTER COLUMN TransactionDate date default getdate()
+
+insert into [DSA MALL IKEJA] (customerID,FirstName, lastName, [Customer_gender], TransactionDate, [Address], [Transaction_amount])
+
+values ( 500,'Femk', 'abdukl',  'male','2025-05-27', '9 old road', 88000.00),
+   (501, 'isaiah', 'john','male', '2025-05-27', '22 alaly stree, okun',  1590.33),
+    ( 506,'emma', 'abu','male', '2025-05-27', '7 ababa street, makunn',  6788.33),
+	 (510, 'kara', 'ogun','female' , '2025-05-27','10 hahroh road, ottawa',  3400.33),
+	  ( 511,'sunkanmi', 'osagie', 'female' ,'2025-05-27', '9 agric butstop street, okun',  89875.00),
+	   (509,'oge', 'kunle', 'male','2025-05-27', '10 iwo street, liverpool',  7860.33),
+	    (504, 'igbayin', 'elizabeth', 'female','2025-05-27', '100 kukuma street, epe',  89100.69)
+
+select * from [DSA Mall Ikeja]
+
+select * from [vw DSA MALL TRANSACTIONS]
+
+
+-----Date Analysis
+
+SELECT * from [vw DSA MALL TRANSACTIONS]
+
+where [Transaction Date] = '2025-05-27'
+
+SELECT Gender, sum([Transaction Amount]) as [total sales]
+from [vw DSA MALL TRANSACTIONS]
+
+where [Transaction Date] = '2025-05-27'
+
+group by gender 
+
+------Analysis base branch (Ghana)
+
+select branch, sum([Transaction Amount]) as Revenue
+from [vw DSA MALL TRANSACTIONS]
+
+where branch = '[DSA Mall Ghana]'
+
+group by branch
+
+----add gender----
+
+select gender, branch, sum([Transaction Amount]) as Revenue
+from [vw DSA MALL TRANSACTIONS]
+
+where branch = '[DSA Mall Ghana]'
+
+group by branch, Gender
+
+-----add gender and date----
+
+select gender, branch, sum([Transaction Amount]) as Revenue
+from [vw DSA MALL TRANSACTIONS]
+
+where branch = '[DSA Mall Ikeja]' and [Transaction Date] = '2025-05-27'
+group by branch, Gender
+
+select gender, branch, sum([Transaction Amount]) as Revenue
+from [vw DSA MALL TRANSACTIONS]
+
+where branch = '[DSA Mall Ikeja]'
+group by branch, Gender
+
 **Note**: In the "Union" operation, all the number of the data types and columns must be the same in both tables on which the union operation is to be applied. "Union" removes the duplicates rows while "Union all" Leaves them. 
 
 ## Day Eight(26 - 05 -2025) 
 
-Introduction to Case When statement
+### Introduction to Case When statement
+
+Finally, we get to the last class. The journey so far has not been easy honsetly but it was worth the stress. Today, we treated conditional queries on SQL.
+
+ - SQL CASE WHEN STATEMENT
+     - Introduction to CASE Statement
+     - SQL – Create CASE WHEN Statement
+  
+-----CASE WHEN STATEMENTS
+
+Alter Table Employee
+
+Add [State of Origin] varchar (100)
+
+Alter Table Employee
+
+Alter column [State of Origin] varchar (255)
+
+----Update state of origin---
+
+-----Using where
+
+Update Employee
+
+set [State of Origin] = 'Lagos'
+
+where Staff_Id In ('AB401', 'AB249', 'AB212')
+
+-----Using CASE WHEN
+
+Update Employee
+
+set [State of Origin] = 
+
+ CASE
+
+   when Staff_Id = 'AB200' THEN 'Delta'
+  
+   when Staff_Id = 'AB212' THEN 'Lagos'
+   
+   when Staff_Id = 'AB223' THEN 'Oyo'
+   
+   when Staff_Id = 'AB234' THEN 'Bauchi'
+   
+   when Staff_Id = 'AB240' THEN 'Port Harcourt'
+   
+   when Staff_Id = 'AB249' THEN 'Lagos'
+   
+   when Staff_Id = 'AB254' THEN 'Edo'
+   
+   when Staff_Id = 'AB260' THEN 'Ekiti'
+   
+   when Staff_Id = 'AB268' THEN 'Delta'
+   
+   when Staff_Id = 'AB270' THEN 'Lagos'
+   
+   when Staff_Id = 'AB278' THEN 'Kano'
+   
+   when Staff_Id = 'AB281' THEN 'kano'
+   
+   when Staff_Id = 'AB282' THEN 'Ekiti'
+   
+   when Staff_Id = 'AB286' THEN 'Lagos'
+   
+   when Staff_Id = 'AB298' THEN 'Delta'
+   
+   when Staff_Id = 'AB299' THEN 'Edo'
+   
+   when Staff_Id = 'AB401' THEN 'Oyo'
+   
+   when Staff_Id = 'AB405' THEN 'Delta'
+
+ELSE 'Unknown'
+
+END
+
+SELECT * FROM Employee
+
+WHERE [State of Origin] = 'Lagos'
+
+SELECT [state of origin], count([state of origin]) as [State numbers] from Employee
+
+Group by [state of origin] 
+
+Order by [State numbers] desc;
+
+----Get staff age at commencement of Hire---
+
+ALter TABLE EMPLOYEE
+
+ALter column Hire_date Date
+
+select * from Employee
+
+ALTER TABLE EMPLOYEE
+
+ADD Age AS DATEDIFF(Year, Date_of_Birth, Hire_Date) -
+
+  CASE
+  
+      WHEN MONTH(Hire_Date) < MONTH(Date_of_Birth) 
+	  OR (MONTH(Hire_date) = MONTH(Date_of_Birth) 
+	  AND DAY(Hire_date) < DAY(Date_of_Birth))
+
+THEN 1
+  
+   ELSE 0
+
+END
+
+----Get staff age today
+
+ALter TABLE EMPLOYEE
+
+drop column Age
+
+ALTER TABLE EMPLOYEE
+
+ADD Age AS DATEDIFF(Year, Date_of_Birth, GETDATE()) -
+
+  CASE
+
+      WHEN MONTH(Date_of_Birth) < GETDATE() 
+	  OR (MONTH(Date_of_Birth) = GETDATE() 
+	  AND DAY(Date_of_Birth) < GETDATE())
+
+THEN 1
+
+   ELSE 0
+
+END
+
+select * from Employee
+
+-- 50 and above = Executive Director
+---36 - 49 = Senior Manager
+--26 and 35 = Manager
+--less than 25 =  Assistant Manager
+
+create view Vw_EMPLOYEES_AGE_GROUP
+
+AS
+
+select Staff_Id, First_Name, Gender, [state of origin], Age,
+
+  CASE
+      
+       when Age  >= 50 then 'Executive Director'
+	   when Age between 36 and 49 then 'Senior Manager'
+	   when Age between 26 and 35 then 'Manager'
+	   when Age <= 25 then 'Executive Trainee'
+	
+  Else 'Unknown'
+
+End as [Age Group]
+
+from Employee
+
+------File Back-up and Restore----
+
+---Advantages
+
+--1. For Data Protection for security purposes.
+
+--2. For Data Recovery in the event of disaster or system failure.
