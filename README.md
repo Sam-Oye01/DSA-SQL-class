@@ -11,7 +11,7 @@
 ### SQL Views
 ### Introduction to Case-When statement
 
-## Day one(08 - 05 - 2025) 
+## DAY ONE (08 - 05 - 2025) 
 
 ### Introduction to SQL
 
@@ -32,7 +32,7 @@ for easy access, retrieval, and manipulation.
      - SQL allows you to analyze more complex questions than dashboard tools.
  -  Types of Databases (Microsoft Access, SQL Server, MySQL, PostgreSQL, Oracle, etc).
 
-## Day Two(12 - 05 -2025)
+## DAY TWO (12 - 05 -2025)
 
 ### Introduction & Types of SQL Commands
 
@@ -88,7 +88,7 @@ CREATE DATABASE DSA_db
 **Note**: SQL is not case sensitive. Generally, keywords of SQL are written in uppercase. 
 Secondly, The default database is the master database, you must change it before writing any query to the database that is needed. 
 
-## Day Three(14 - 05 - 2025)
+## DAY THREE (14 - 05 - 2025)
 
 ### Introduction to SQL Queries
 
@@ -182,7 +182,7 @@ We wrote the following queries;
 
 **Note**: Before importing files, you must ascertain the data source, know where it is stored and determine the data quality. Ensure you check the data types of the columns and confirm if it does not need to be changed. Also, you must specify primary key before importing files.
 
-## Day Four(15 - 05 -2025)
+## DAY FOUR (15 - 05 -2025)
 
 ### SQL Tables
 
@@ -280,7 +280,7 @@ Today, we took a step further on our SQL journey as we continued by exploring ot
 
 **Note:** We use box parenthesis [] when we want to introduce spaces in between our column names.
 
-## Day Five(19 - 05 - 2025)
+## DAY FIVE (19 - 05 - 2025)
 
 ### SQL Clauses
 
@@ -375,7 +375,7 @@ We wrote the following queries;
 
 **Note**: Ensure to use the primary key of the tables to connect them together, and know that the primary key is a unique identifier of every table. It becomes a foreign key in other tables. "Join" is synonymous to "Merge" in Power BI. Join works on the column of a table but set operations such as "Union" works on the rows.
 
-## Day Six(21 - 05 - 2025)
+## DAY SIX (21 - 05 - 2025)
 
 ### SQL operators
 
@@ -474,7 +474,7 @@ We wrote the following queries;
 
 **Note**: A view is a Hypothetically generated that is a product of an originally stored table/the result of an SQL query.
 
-## Day Seven(22 - 05 -2025)
+## DAY SEVEN (22 - 05 -2025)
 
 ### SQL Views
 
@@ -639,7 +639,7 @@ We wrote the following queries;
 
 **Note**: In the "Union" operation, all the number of the data types and columns must be the same in both tables on which the union operation is to be applied. "Union" removes the duplicates rows while "Union all" Leaves them. 
 
-## Day Eight(26 - 05 -2025) 
+## DAY EIGHT (26 - 05 -2025) 
 
 ### Introduction to Case When statement
 
