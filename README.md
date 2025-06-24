@@ -2,7 +2,14 @@
 
 COURSE OUTLINES
 
-
+- Introduction to SQL 
+- Introduction & Types of SQL Commands
+- Introduction to SQL Queries
+- SQL Tables
+- SQL Clauses
+- SQL operators
+- SQL Views
+- Introduction to Case When statement
 
 ## Day one(08 - 05 - 2025) 
 
@@ -34,4 +41,4 @@ SQL Views
 
 ## Day Eight(26 - 05 -2025) 
 
-Introduction to case When statement
+Introduction to Case When statement
