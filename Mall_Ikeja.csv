@@ -1,0 +1,21 @@
+CustomerID,FirstName,LastName,Customer_gender,TransactionDate,Address,Transaction_Amount
+500,Gabriel,Abdulkalid,male,5/21/2025,"5 old road, Opebi",880500
+501,Abraham,john,Female,5/21/2025,"22 Toyin street, Opebi",1590.33
+516,Emmanuel,Abubakar,male,5/21/2025,"7 Aboaba street, Ikeja",7788.33
+510,Oluwakemi,Marvelous,female,5/21/2025,"10 Marvelous road, Ottawa",63400.33
+551,sunkanmi,osagie,female,5/21/2025,"9 agric butstop street, Allen",29875.04
+509,Oge,Gbenga,male,5/21/2025,"10 Hosiptal street, Allen Avenue",7860.33
+504,igbayin,elizabeth,female,5/21/2025,"100 kukuma street, Opebi",8100.79
+519,Akpabio,Akinbho,female,5/21/2025,"9 Akinola street, Ikeja",9500.5
+520,latana,jerremy,male,5/21/2025,"9 ifelofudn quarter, Opebi",75090.35
+516,marvelous,Jeremiah,female,5/21/2025,"9Toyin quarter, Allen Avenue",3590.05
+510,Kaosata,Michael,female,5/21/2025,"10 Awolowo road, Ikeja",3700.93
+511,Johnson,Fournier,female,5/21/2025,"9 Blackburn road, okun",9875
+506,Brandeis ,Marshall,male,5/21/2025,"7 ababa street, makunn",65588.33
+521,igbayin,elizabeth,female,5/21/2025,"100 kukuma street, Opebi",8100.79
+522,Kozyrkov,Arguelles,female,5/21/2025,"9 Akinola street, Ikeja",9500.5
+528,Cassie,Johnson,male,5/21/2025,"9 ifelofudn quarter, Opebi",785850.35
+545,marvelous,Jeremiah,female,5/21/2025,"9Toyin quarter, Allen Avenue",99590.05
+544,Kaosata,Yegge,female,5/21/2025,"10 Awolowo road, Ikeja",37600.93
+588,Steve,Yegge,female,5/21/2025,"9 agric butstop street, okun",9875
+523,Adeloloa,Jacob,male,5/21/2025,"7 ababa street, makunn",69899.89

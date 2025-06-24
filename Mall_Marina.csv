@@ -1,0 +1,19 @@
+CustomerID,FirstName,LastName,Customer_gender,TransactionDate,Address,Transaction_Amount
+200,Femk,abdukl,male,5/21/2025,9 old road,88000
+201,isaiah,john,male,5/21/2025,"22 alaly stree, okun",1590.33
+206,emma,abu,male,5/21/2025,"7 ababa street, makunn",6788.33
+210,kara,ogun,female,5/21/2025,"10 hahroh road, ottawa",3400.33
+211,sunkanmi,osagie,female,5/21/2025,"9 agric butstop street, okun",89875
+209,oge,kunle,male,5/21/2025,"10 iwo street, liverpool",7860.33
+204,igbayin,elizabeth,female,5/21/2025,"100 kukuma street, epe",89100.69
+219,mummry,akinbho,female,5/21/2025,"9 babaoluwa quarter, ipaha",9000.5
+220,latana,jerremy,male,5/21/2025,"9 ifelofudn quarter, ado",15090.35
+216,marvelous,jerremy,female,5/21/2025,"9 jo grey quarter, igbo",53590.35
+210,kara,ogun,female,5/21/2025,"10 hahroh road, ottawa",3400.33
+211,sunkanmi,osagie,female,5/21/2025,"9 agric butstop street, okun",89875
+206,emma,abu,male,5/21/2025,"7 ababa street, makunn",6788.33
+233,Adewale,Eleshoh,male,5/21/2025,"plot 10 Agric road, Ado-Lekki",8799090.39
+243,Gerald,jerremy,Male,5/21/2025,"9 Marteen Quarter, liverpool",903590.0066
+245,Debbry,Alex,female,5/21/2025,"89  Maroko street, ottawa",900400.7758
+250,Alexander,osagie,Male,5/21/2025,"Plot 1233 butstop street, Ikeja",674422.9
+290,Saraki,Abu,male,5/21/2025,"Plot ozambe madiwa, Makunn",525353.7474

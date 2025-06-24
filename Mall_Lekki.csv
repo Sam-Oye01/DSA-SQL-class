@@ -1,0 +1,17 @@
+CustomerID,FirstName,LastName,Customer_gender,TransactionDate,Address,Transaction_Amount
+100,ramesh,abdukl,male,5/21/2025,8 ahmed road,2000
+121,khilan,delhi,female,5/21/2025,"9 delhi stree, okun",1500.33
+111,malik,delhi,female,5/21/2025,"2 agriiv stree, makunn",1999.33
+110,kara,ogun,male,5/21/2025,"10 hahroh road, ottawa",3400.33
+109,sunkanmi,alade,male,5/21/2025,"9 orebiyi street, okun",37575
+108,orobiyi,kekerekun,male,5/21/2025,"88 malele road, ijebu",6500.33
+115,igbati,bunmi,male,5/21/2025,"90 delhi street, abeokunta",1000.69
+120,mummry,akinbho,female,5/21/2025,"9 babaoluwa quarter, ipaha",9000.5
+119,latana,jerremy,male,5/21/2025,"9 ifelofudn quarter, ado",15090.35
+108,orobiyi,kekerekun,male,5/21/2025,"88 malele road, ijebu",6500.33
+111,malik,delhi,female,5/21/2025,"2 agriiv stree, makunn",1999.33
+121,Saraki,Bunmi,Female,5/21/2025,"90 delhi street, abeokunta",67400.009
+123,Alake,alagbo,female,5/21/2025,"9 babaoluwa quarter, ipaha",74799.5084
+124,Laropale,Jeremiah,male,5/21/2025,"9 Makun Ododo Quarter, Lissa",679090.95
+138,Samuel,Orokpo,male,5/21/2025,"88 old Ife road, ijebu",65990.33
+141,Abdulmalik,Huedeyin,Male,5/21/2025,"2 Hedeyin road, Lakowe",88989.93
